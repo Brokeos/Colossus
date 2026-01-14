@@ -66,7 +66,7 @@ public class InternalEventListener extends ListenerAdapter {
     // Click button
     @Override
     public void onButtonInteraction(@NotNull ButtonInteractionEvent event) {
-        String buttonId = event.getButton().getId();
+        String buttonId = event.getButton().getCustomId();
         try {
             if (STATIC_BUTTON_LISTENERS.containsKey(buttonId)) {
                 STATIC_BUTTON_LISTENERS.get(buttonId).accept(new ButtonClickEvent(event));
